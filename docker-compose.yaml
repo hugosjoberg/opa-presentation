@@ -1,0 +1,19 @@
+services:
+  opa:
+    image: openpolicyagent/opa:1.10.1-static
+    container_name: opa-server
+    ports:
+      - "8181:8181"
+    volumes:
+      - ./policies:/policies
+    command:
+      - "run"
+      - "--server"
+      - "--log-level=debug"
+      - "--log-format=text"
+      - "--addr=0.0.0.0:8181"
+      - "--set=decision_logs.console=true"
+      - "--log-format=json"
+      - "--optimize-store-for-read-speed"
+      - "./policies/"
+    restart: unless-stopped
