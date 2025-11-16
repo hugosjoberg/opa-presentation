@@ -432,3 +432,5 @@ Questions?
 <!-- column: 1 -->
 <!-- newlines: 4 -->
 Thank you!
+
+Slides: https://github.com/hugosjoberg/opa-presentation
